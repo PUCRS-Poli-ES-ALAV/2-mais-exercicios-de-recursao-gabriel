@@ -60,16 +60,16 @@ public class exercicios{
         return j+ex4(j+1, k);
     }
 
-    // public static boolean isPal(String s){
-    //     if(s.lenght() == 1 || s.charAt(s.length()-1) == s.charAt(s.length()-2)){
-    //         return true;
-    //     }
-    //     if(s.charAt(0) != s.charAt(s.length()-1)){
-    //         return false;
-    //     }
-
-    //     return isPal(s.substring(1,s.length()-2));    
-    // }
+    public static boolean isPal(String s){
+        if(s.charAt(0) != s.charAt(s.length()-1)){
+            return false;
+        }
+        if(s.length() == 1){
+            return true;
+        }
+        isPal(s.substring(1,s.length()-2));
+        return true;    
+    }
 
     public static String intToBinary (int n) {
         if(n == 0) {
@@ -108,6 +108,18 @@ public class exercicios{
             return true;
         }
         return findSubStr(str.substring(1), match);
+    }
+
+    public static int findBiggest(ArrayList<Integer> ar){
+        if(ar.size()==1){
+            return ar.get(0);
+        }
+        int aux = ar.remove(ar.size()-1);
+        int aux2 = findBiggest(ar);
+        if (aux > aux2) {
+            return aux;
+        }
+        return aux2;
     }
 
 }
