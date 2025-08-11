@@ -3,7 +3,7 @@ public class exercicios{
     public static void main (String[]args){
         
         System.out.println("Testando:");
-        System.out.println("Resultado: "+isPal("abba"));
+        System.out.println("Resultado: "+intToBinary(157));
 
     }
 
@@ -47,15 +47,26 @@ public class exercicios{
         return j+ex4(j+1, k);
     }
 
-    public static boolean isPal(String s){
-        if(s.lenght() == 1 || s.charAt(s.length()-1) == s.charAt(s.length()-2)){
-            return true;
-        }
-        if(s.charAt(0) != s.charAt(s.length()-1)){
-            return false;
-        }
+    // public static boolean isPal(String s){
+    //     if(s.lenght() == 1 || s.charAt(s.length()-1) == s.charAt(s.length()-2)){
+    //         return true;
+    //     }
+    //     if(s.charAt(0) != s.charAt(s.length()-1)){
+    //         return false;
+    //     }
 
-        return isPal(s.substring(1,s.length()-2));    
+    //     return isPal(s.substring(1,s.length()-2));    
+    // }
+
+    public static String intToBinary (int n) {
+        if(n == 0) {
+            return "0";
+        }
+        if(n == 1) {
+            return "1";
+        }
+        String aux = Integer.toString(n % 2);
+        return intToBinary(n/2) + aux;
     }
 
 }
