@@ -97,4 +97,17 @@ public class exercicios{
         return 1 + nroDigit(n/10);
     }
 
+    public static boolean findSubStr(String str, String match) {
+        if (match.isEmpty()) {
+            return true;
+        }
+        if (str.length() < match.length()) {
+            return false;
+        }
+        if (str.startsWith(match)) {
+            return true;
+        }
+        return findSubStr(str.substring(1), match);
+    }
+
 }
