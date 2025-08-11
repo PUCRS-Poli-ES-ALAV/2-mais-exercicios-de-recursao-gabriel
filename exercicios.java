@@ -1,9 +1,20 @@
-public class exercicios{
 
+import java.util.ArrayList;
+
+
+public class exercicios{    
     public static void main (String[]args){
         
-        System.out.println("Testando:");
-        System.out.println("Resultado: "+intToBinary(157));
+        // System.out.println("Testando:");
+        // System.out.println("Resultado: "+intToBinary(157));
+
+        ArrayList<Integer> array = new ArrayList<>();
+
+        array.add(10);
+        array.add(20);
+        array.add(30);
+
+        System.err.println("Resultado soma array: "+ somaArray(array));
 
     }
 
@@ -67,6 +78,14 @@ public class exercicios{
         }
         String aux = Integer.toString(n % 2);
         return intToBinary(n/2) + aux;
+    }
+
+    public static int somaArray (ArrayList<Integer> array) {
+        if (array.size() == 0){
+            return 0;
+        }
+        int aux = array.remove(array.size()-1);
+        return aux + somaArray(array);
     }
 
 }
