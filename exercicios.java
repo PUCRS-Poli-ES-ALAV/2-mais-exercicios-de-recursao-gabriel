@@ -8,13 +8,15 @@ public class exercicios{
         // System.out.println("Testando:");
         // System.out.println("Resultado: "+intToBinary(157));
 
-        ArrayList<Integer> array = new ArrayList<>();
+        // ArrayList<Integer> array = new ArrayList<>();
 
-        array.add(10);
-        array.add(20);
-        array.add(30);
+        // array.add(10);
+        // array.add(20);
+        // array.add(30);
 
-        System.err.println("Resultado soma array: "+ somaArray(array));
+        // System.err.println("Resultado soma array: "+ somaArray(array));
+
+        System.out.println("Resultado: "+nroDigit(17989));
 
     }
 
@@ -86,6 +88,13 @@ public class exercicios{
         }
         int aux = array.remove(array.size()-1);
         return aux + somaArray(array);
+    }
+
+    public static int nroDigit (int n) {
+        if (n < 10) {
+            return 1;
+        }
+        return 1 + nroDigit(n/10);
     }
 
 }
